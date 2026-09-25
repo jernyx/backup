@@ -158,6 +158,7 @@ youtube.com##ytd-rich-item-renderer:has-text(Premieres )
 youtube.com##ytd-channel-renderer
 youtube.com##[page-subtype="search"] #channel-thumbnail
 youtube.com##[page-subtype="search"] #avatar
+youtube.com##span:has(span > div > svg > [d="M5 4.623v14.755a1.5 1.5 0 002.261 1.294l12.766-7.51L22 12.002l-1.973-1.162L7.26 3.33A1.5 1.5 0 005 4.623Zm2 13.88V5.497L18.056 12 7 18.503Z"])
 
 
 
