@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Filters
 // @namespace    http://tampermonkey.net/
-// @version      5.5
+// @version      5.6
 // @description  Youtube Filters
 // @author       You
 // @match        *://*.youtube.com/*
@@ -37,6 +37,7 @@
             "Anton Petrov": 20,
             "jacobjonesMONEY": 50,
             "Hafthor Bjornsson": 60,
+            "burialgoods": 5,
         };
 
         const channelMinMinutes = {
@@ -58,7 +59,8 @@
             "Danit Friedman": 20,
             "Anton Petrov": 16,
             "jacobjonesMONEY": 45,
-            "Hyperborean Knowledge": 30
+            "Hyperborean Knowledge": 30,
+            "burialgoods": 1,
         };
 
         const channelBlockedKeywords = {
@@ -92,6 +94,7 @@
             "Mighty",
             "The Onion",
             "After Skool",
+            "ESOTERICA",
             "Infowars",
             "THE MMA GURU",
             "PBS Eons"
