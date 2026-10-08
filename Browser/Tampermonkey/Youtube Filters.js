@@ -216,21 +216,21 @@
             // Any "and N more" / "N more" span = multi-channel collab -> block
             if (spanTexts.some(t => MORE_RE.test(t))) return true;
 
-            const t = spanTexts.join(' | ');
-            const mainChannel = normalize(getChannelName(item));
+            // Collab detection: a span like "and JADE" means the byline is "X and Y".
+            // (Also treat multiple channel links as a collab for older layouts.)
             const channelLinks = item.querySelectorAll('a[href^="/@"], a[href^="/channel/"], a[href*="/c/"]');
+            const hasAndSpan = spanTexts.some(s => /^and\s+\S/.test(s));
+            const isCollab = hasAndSpan || channelLinks.length > 1;
+
+            // Single uploader -> not a collab, leave it to the other filters
+            if (!isCollab) return false;
+
+            const t = spanTexts.join(' | ');
 
             return blockedCollabChannels.some(c => {
                 const n = normalize(c);
-
                 if (MORE_RE.test(n)) return false; // handled above
-
-                if (!t.includes(n)) return false;
-
-                // Blocked channel is the sole uploader -> not a collab, leave to other filters
-                if (mainChannel === n && channelLinks.length <= 1) return false;
-
-                return true;
+                return t.includes(n);
             });
         }
 
