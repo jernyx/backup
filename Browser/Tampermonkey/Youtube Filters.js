@@ -61,6 +61,7 @@
             "jacobjonesMONEY": 45,
             "Hyperborean Knowledge": 30,
             "burialgoods": 1,
+            "The Onion": 1,
         };
 
         const channelBlockedKeywords = {
