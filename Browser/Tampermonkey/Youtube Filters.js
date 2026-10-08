@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         YouTube Filters
 // @namespace    http://tampermonkey.net/
-// @version      5.6
+// @version      5.7
 // @description  Youtube Filters
 // @author       You
 // @match        *://*.youtube.com/*
@@ -73,8 +73,9 @@
             "Quanta Magazine": ["PODCAST", "Podcast"],
         };
 
+        // Note: any "and N more" collab is now blocked automatically,
+        // so "2 more", "3 more" etc. no longer need to be listed here.
         const blockedCollabChannels = [
-            "3 more", "2 more", "4 more", "5 more",
             "FREESTYLEBENDER",
             "MrBeast",
             "JiDion",
@@ -85,6 +86,7 @@
             "Astrum",
             "Sam Hyde",
             "Absolute Terry Davis",
+            "Practical Engineering",
             "Coffeezilla",
             "Kevin Frasard",
             "Hafthor Bjornsson",
@@ -149,6 +151,9 @@
             return p.length === 3 ? p[0]*3600 + p[1]*60 + p[2] : p[0]*60 + p[1];
         }
 
+        const DURATION_RE = /^\d{1,2}:\d{2}(:\d{2})?$/;
+        const MORE_RE = /^(and\s+)?\d+\s+more$/i;
+
         function getChannelName(item) {
             const nameEl = item.querySelector('ytd-channel-name .yt-simple-endpoint, #text-container.ytd-channel-name');
             if (nameEl && nameEl.textContent.trim()) return nameEl.textContent.trim();
@@ -157,6 +162,16 @@
             for (const a of links) {
                 const txt = a.textContent.trim();
                 if (txt) return txt;
+            }
+
+            // Metadata spans: first one that isn't a duration / "and N more" is the channel
+            const spans = item.querySelectorAll('.ytContentMetadataViewModelMetadataText');
+            for (const s of spans) {
+                const txt = s.textContent.trim();
+                if (!txt) continue;
+                if (DURATION_RE.test(txt)) continue;   // duration
+                if (MORE_RE.test(txt)) continue;       // "and 2 more"
+                return txt;
             }
 
             const metaRow = item.querySelector('.ytContentMetadataViewModelMetadataRow, .yt-content-metadata-view-model__metadata-row');
@@ -184,31 +199,36 @@
             return null;
         }
 
-        // FIX: explicitly grab the byline row (first .ytContentMetadataViewModelMetadataRow),
-        // never let querySelector fall through to the stats row ("7:38 • 36K views • 2 days ago"),
-        // which shares the same class and never contains "more".
+        // FIX: the metadata delimiters are empty spans, so the row's textContent
+        // runs everything together ("Atun-Shei Filmsand 2 more42K7d ago").
+        // We therefore inspect each metadata text span individually.
         function isBlockedCollab(item) {
-            const metaRows = item.querySelectorAll('.ytLockupMetadataViewModelMetadata .ytContentMetadataViewModelMetadataRow, .ytContentMetadataViewModelMetadataRow, #metadata, .yt-lockup-metadata-view-model__metadata, .yt-lockup-view-model__metadata');
-            if (!metaRows.length) return false;
+            const spanEls = item.querySelectorAll('.ytContentMetadataViewModelMetadataText');
+            let spanTexts = [...spanEls].map(s => normalize(s.textContent)).filter(Boolean);
 
-            // The byline row (channel name + "and N more") is always the first metadata row.
-            const bylineRow = metaRows[0];
-            const t = normalize(bylineRow.textContent);
+            // Fallback for older layouts without these spans
+            if (!spanTexts.length) {
+                const row = item.querySelector('#metadata, .yt-lockup-metadata-view-model__metadata, .yt-lockup-view-model__metadata');
+                if (!row) return false;
+                spanTexts = [normalize(row.textContent)];
+            }
+
+            // Any "and N more" / "N more" span = multi-channel collab -> block
+            if (spanTexts.some(t => MORE_RE.test(t))) return true;
+
+            const t = spanTexts.join(' | ');
             const mainChannel = normalize(getChannelName(item));
-            const channelLinks = bylineRow.querySelectorAll('a[href^="/@"], a[href^="/channel/"], a[href*="/c/"]');
+            const channelLinks = item.querySelectorAll('a[href^="/@"], a[href^="/channel/"], a[href*="/c/"]');
 
             return blockedCollabChannels.some(c => {
                 const n = normalize(c);
 
-                if (n.includes("more")) {
-                    return new RegExp(`\\b${n}\\b`, 'i').test(t);
-                }
+                if (MORE_RE.test(n)) return false; // handled above
 
                 if (!t.includes(n)) return false;
 
-                if (mainChannel === n && channelLinks.length <= 1) {
-                    return false;
-                }
+                // Blocked channel is the sole uploader -> not a collab, leave to other filters
+                if (mainChannel === n && channelLinks.length <= 1) return false;
 
                 return true;
             });
