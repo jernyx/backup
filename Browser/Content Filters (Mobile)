@@ -135,6 +135,17 @@ discord.com##div[id*="popout"] > div[data-mana-component*="popover"]
 
 
 
+facebook.com###watch_feed
+facebook.com##body > div > div > div > div > div > div > div > div > div > div > [role="navigation"]
+facebook.com##div:has(> [role="navigation"]) > [role="complementary"]
+facebook.com##li:has(a[href="/reel/?s=tab"])
+facebook.com##li:has(a[href="/gaming/play/?store_visit_source=gaming_tab"])
+facebook.com##body > div > div > div > div > div > div > div > div > div > div > div[role="main"] > div > div > div > div > div > div:nth-of-type(4) > div
+facebook.com##body > div > div > div > div > div > div > div > div > div > div > div[role="main"] > div > div > div > div > div > div:nth-of-type(3) > div:has([href="/stories/create/"])
+facebook.com##div.displayed.m
+
+
+
 instagram.com##[data-visualcompletion="ignore-dynamic"] a[href*="/reels/"]
 instagram.com##[aria-haspopup="menu"]
 instagram.com##[href="/explore/people/"]
