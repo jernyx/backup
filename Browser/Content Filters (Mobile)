@@ -143,6 +143,7 @@ facebook.com##li:has(a[href="/gaming/play/?store_visit_source=gaming_tab"])
 facebook.com##body > div > div > div > div > div > div > div > div > div > div > div[role="main"] > div > div > div > div > div > div:nth-of-type(4) > div
 facebook.com##body > div > div > div > div > div > div > div > div > div > div > div[role="main"] > div > div > div > div > div > div:nth-of-type(3) > div:has([href="/stories/create/"])
 facebook.com##div.displayed.m
+m.facebook.com##body
 
 
 
