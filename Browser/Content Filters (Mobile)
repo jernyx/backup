@@ -109,7 +109,6 @@ spotify.com##body:style(zoom:1.2 !important)
 spotify.com##html:style(font-size:150% !important)
 spotify.com##[aria-label="Now playing bar"] > div:style(zoom:1.2 !important)
 spotify.com###global-nav-bar > div:style(zoom:1.2 !important)
-spotify.com###main-view [aria-label="Jernej"]
 
 
 
