@@ -236,7 +236,6 @@ claude.ai##div:has(> span > [href="/upgrade"])
 
 spotify.com##[href="/download"]
 spotify.com##[data-testid="footer-div"]
-spotify.com###main-view [aria-label="Jernej"]
 spotify.com###main-view ~ div:has([aria-label="Now playing view"])
 spotify.com###main-view ~ div:has([aria-label="Current device"])
 spotify.com##[data-testid="home-banner"]:has(> [data-testid="premium-banner"]) 
