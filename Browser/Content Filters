@@ -329,7 +329,6 @@ google.com##div:has(> div[role="navigation"] > div > div[data-st-cnt="mode"] > d
 google.com##div:has(> div > div > div > div > div > a[aria-label="View all videos"])
 google.com###appbar
 google.com##g-section-with-header
-google.com###botstuff > div > div:nth-of-type(3)
 google.com##i
 google.com##div[role="navigation"]:has(div[data-st-cnt="mode"])
 google.com##div[data-id="mosaic"] div:has(> a[href*="/search?"])
@@ -343,6 +342,7 @@ google.com###main div > div > div > div > div > div > div[role="list"] > div:has
 google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Books)
 google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Finance)
 google.com###main div > div > div > div > div > div > div > div[tabindex="0"] > div:has-text(Tools)
+google.com##[role="heading"]:has-text(People also search for)
 google.com##div > ol > li > a[href*="/save"]
 google.com##div[role="button"][tabindex="0"] > div > span:has-text(Feedback)
 google.com##div:has(> button path[d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"]) 
