@@ -109,7 +109,7 @@ spotify.com##body:style(zoom:1.2 !important)
 spotify.com##html:style(font-size:150% !important)
 spotify.com##[aria-label="Now playing bar"] > div:style(zoom:1.2 !important)
 spotify.com###global-nav-bar > div:style(zoom:1.2 !important)
-open.spotify.com##img:style(filter: brightness(0) !important; background: #000 !important)
+spotify.com##img:style(filter: brightness(0) !important; background: #000 !important)
 
 
 
