@@ -222,6 +222,9 @@ chatgpt.com##[class="relative"] > aside
 chatgpt.com##[aria-label="Upgrade"]
 chatgpt.com##div:has(> [aria-label="Claim offer"])
 chatgpt.com###modal-beacon
+chatgpt.com##button:has-text(Claim offer):upward(2)
+chatgpt.com##button:has-text(Free offer):upward(2)
+chatgpt.com##[aria-live="polite"]
 
 
 
@@ -231,6 +234,8 @@ claude.ai##[role="note"][data-disclaimer="true"]:style(visibility: hidden !impor
 claude.ai##fieldset > div[data-alert-band-wrapper="true"]
 claude.ai##div:has(> ul [aria-label="Design"])
 claude.ai##div:has(> span > [href="/upgrade"])
+claude.ai##span > span:has-text(Upgrade)
+claude.ai##div:has( > span > [src="/images/install-hub/claude_code_desktop-icon.svg"])
 
 
 
@@ -318,55 +323,55 @@ lichess.org###friend_box
 
 
 
-google.com##div[role="contentinfo"]
-google.com##[role="search"] button
-google.com###iur
-google.com##div[data-iu="1"][style="position:relative"]:has(span[aria-level="2"][role="heading"])
-google.com##[data-count="9"]
-google.com##.related-question-pair
-google.com##div:has(> div > div > div > div > div > div[role="group"])
-google.com##div:has(> div[role="navigation"] > div > div[data-st-cnt="mode"] > div[data-zru="1"] > div > div > div > div > div > div > div[role="list"])
-google.com##div:has(> div > div > div > div > div > a[aria-label="View all videos"])
-google.com###appbar
-google.com##g-section-with-header
-google.com##i
-google.com##div[role="navigation"]:has(div[data-st-cnt="mode"])
-google.com##div[data-id="mosaic"] div:has(> a[href*="/search?"])
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(AI Mode)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Short videos)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(News)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Places)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Sites)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Forums)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(More)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Books)
-google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Finance)
-google.com###main div > div > div > div > div > div > div > div[tabindex="0"] > div:has-text(Tools)
-google.com##[role="heading"]:has-text(People also search for)
-google.com##div > ol > li > a[href*="/save"]
-google.com##div[role="button"][tabindex="0"] > div > span:has-text(Feedback)
-google.com##div:has(> button path[d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"]) 
-google.com##[href*="support.google.com/websearch/"]
-google.com##[href*="/save"]
-google.com##[aria-label*="Save"]
-google.com##[aria-label*="Share"]
-google.com##div:has(> div > a[data-psd*=";feedbackType:"])
-google.com##div:has(> span > div > div > a[aria-label*="Learn more"])
-google.com##div:has(> div > div:nth-of-type(2) > div > div > div > a[href*="/search?"])
-google.com##div:has(> [data-attrid*=":stats"])
-google.com##div:has(> div > div > [data-st-cnt="mode"])
-google.com##[data-async-context*="query"]> div:has(> div > div > div > div > div > div > div > div > a[href*="/search"])
-google.com##block-component
-google.com##[aria-label="Upgrade"]
-google.com##[href="/gems/view"]
-google.com##location-footer
-google.com##[data-test-id="highly-regulated-disclaimer"]:style(visibility:hidden!important)
-google.com##side-nav-entry-button:has([aria-label="My stuff"])
-google.com##side-nav-action-button:has([aria-label="Gemini Apps Activity"])
-google.com##.advanced-upsell-bg
-google.com##[aria-describedby="promo_desc_id"]
-google.com##span > span:has-text("People also ask"):upward(4)
-google.com##[class*="adv-upsell"]
+www.google.com##div[role="contentinfo"]
+www.google.com##[role="search"] button
+www.google.com###iur
+www.google.com##div[data-iu="1"][style="position:relative"]:has(span[aria-level="2"][role="heading"])
+www.google.com##[data-count="9"]
+www.google.com##.related-question-pair
+www.google.com##div:has(> div > div > div > div > div > div[role="group"])
+www.google.com##div:has(> div[role="navigation"] > div > div[data-st-cnt="mode"] > div[data-zru="1"] > div > div > div > div > div > div > div[role="list"])
+www.google.com##div:has(> div > div > div > div > div > a[aria-label="View all videos"])
+www.google.com###appbar
+www.google.com##g-section-with-header
+www.google.com##i
+www.google.com##div[role="navigation"]:has(div[data-st-cnt="mode"])
+www.google.com##div[data-id="mosaic"] div:has(> a[href*="/search?"])
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(AI Mode)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Short videos)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(News)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Places)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Sites)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Forums)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(More)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Books)
+www.google.com###main div > div > div > div > div > div > div[role="list"] > div:has-text(Finance)
+www.google.com###main div > div > div > div > div > div > div > div[tabindex="0"] > div:has-text(Tools)
+www.google.com##[role="heading"]:has-text(People also search for)
+www.google.com##div > ol > li > a[href*="/save"]
+www.google.com##div[role="button"][tabindex="0"] > div > span:has-text(Feedback)
+www.google.com##div:has(> button path[d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"]) 
+www.google.com##[href*="support.google.com/websearch/"]
+www.google.com##[href*="/save"]
+www.google.com##[aria-label*="Save"]
+www.google.com##[aria-label*="Share"]
+www.google.com##div:has(> div > a[data-psd*=";feedbackType:"])
+www.google.com##div:has(> span > div > div > a[aria-label*="Learn more"])
+www.google.com##div:has(> div > div:nth-of-type(2) > div > div > div > a[href*="/search?"])
+www.google.com##div:has(> [data-attrid*=":stats"])
+www.google.com##div:has(> div > div > [data-st-cnt="mode"])
+www.google.com##[data-async-context*="query"]> div:has(> div > div > div > div > div > div > div > div > a[href*="/search"])
+www.google.com##block-component
+www.google.com##.advanced-upsell-bg
+www.google.com##[aria-describedby="promo_desc_id"]
+www.google.com##span > span:has-text("People also ask"):upward(4)
+www.google.com##[class*="adv-upsell"]
+gemini.google.com##[aria-label="Upgrade"]
+gemini.google.com##[href="/gems/view"]
+gemini.google.com##location-footer
+gemini.google.com##[data-test-id="highly-regulated-disclaimer"]:style(visibility:hidden!important)
+gemini.google.com##side-nav-entry-button:has([aria-label="My stuff"])
+gemini.google.com##side-nav-action-button:has([aria-label="Gemini Apps Activity"])
 
 
 
