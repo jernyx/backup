@@ -110,6 +110,8 @@ spotify.com##html:style(font-size:150% !important)
 spotify.com##[aria-label="Now playing bar"] > div:style(zoom:1.2 !important)
 spotify.com###global-nav-bar > div:style(zoom:1.2 !important)
 spotify.com###main-view [aria-label="Jernej"]
+spotify.com##[data-testid="user-image"]:upward(5):has(h1:has-text(/^Jernej$/)) img:style(filter: brightness(0) !important; background: #000 !important)
+spotify.com##body:has([title="YUBEL"]) [data-encore-id="card"] img:style(filter: brightness(0) !important; background: #000 !important)
 
 
 
