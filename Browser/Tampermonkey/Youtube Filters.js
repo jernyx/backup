@@ -1,13 +1,13 @@
 // ==UserScript==
 // @name         YouTube Filters
 // @namespace    http://tampermonkey.net/
-// @version      5.7
+// @version      5.8
 // @description  Youtube Filters
 // @author       You
 // @match        *://*.youtube.com/*
 // @grant        none
-// @updateURL    https://github.com/jernyx/Backup/raw/refs/heads/main/Browser/Tampermonkey/YouTube%20Filters.js
-// @downloadURL  https://github.com/jernyx/Backup/raw/refs/heads/main/Browser/Tampermonkey/YouTube%20Filters.js
+// @updateURL    https://github.com/jernyx/backup/raw/refs/heads/main/Browser/Tampermonkey/YouTube%20Filters.js
+// @downloadURL  https://github.com/jernyx/bacckup/raw/refs/heads/main/Browser/Tampermonkey/YouTube%20Filters.js
 // ==/UserScript==
 
 (function () {
@@ -100,7 +100,8 @@
             "ESOTERICA",
             "Infowars",
             "THE MMA GURU",
-            "PBS Eons"
+            "PBS Eons",
+            "The Thought Emporium"
         ];
 
         const channelThumbnailOverrides = {
